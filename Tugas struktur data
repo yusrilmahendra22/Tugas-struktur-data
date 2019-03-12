@@ -1,0 +1,199 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+#include <windows.h>
+
+using namespace std;
+
+struct mahasiswa
+{
+    char nama[50];
+    char kelamin[50];
+    char jurusan[50];
+    int nim;
+    double nil1,nil2,nil3,rata,jumlah;
+};
+
+
+
+
+void isidata()
+{
+    mahasiswa mhs[5];
+    int i;
+    for (i=0;i<5;i++)
+    {
+        cout<<"Masukkan NIM             : ";
+        cin>>mhs[i].nim;
+        cout<<"Masukkan Nama            : ";
+        cin>>mhs[i].nama;
+        cout<<"Masukkan Jenis Kelamin   : ";
+        cin>>mhs[i].kelamin;
+        cout<<"Masukkan Jurusan         : ";
+        cin>>mhs[i].jurusan;
+        cout<<"Masukkan Nilai 1         : ";
+        cin>>mhs[i].nil1;
+        cout<<"Masukkan Nilai 2         : ";
+        cin>>mhs[i].nil2;
+        cout<<"Masukkan Nilai 3         : ";
+        cin>>mhs[i].nil3;
+        cout<<"----------------------------"<<endl;
+    }
+
+    for (i=0;i<5;i++)
+	{
+        mhs[i].jumlah=mhs[i].nil1+mhs[i].nil2+mhs[i].nil3;
+	    mhs[i].rata=mhs[i].jumlah/3;
+		cout<<"NIM\t: "<<mhs[i].nim<<endl;
+
+		cout<<"Nama\t: "<<mhs[i].nama<<endl;
+
+		cout<<"nilai 1\t: "<<mhs[i].nil1<<endl;
+
+		cout<<"nilai 2\t: "<<mhs[i].nil2<<endl;
+
+		cout<<"nilai 3\t: "<<mhs[i].nil3<<endl;
+
+		cout<<"rata-rata 1\t: "<<mhs[i].rata<<endl;
+
+		cout<<"--------------------------------------"<<endl;
+
+}
+};
+void pencarian()
+{
+    int bubble;
+    int *arrBilangan;
+               int juml;
+               int cari;
+
+
+
+	int tampung;{
+	    cout<<"---------------------------------"<<endl;
+
+	cout<<"Masukkan Nilai Yang Di Cari : ";
+	cin>>cari;
+
+	for(int x = 0; x < juml;x++){
+		for(int i = 0; i < juml-1;i++){
+			if(arrBilangan[i] > arrBilangan[i+1]){
+				tampung = arrBilangan[i];
+				arrBilangan[i] = arrBilangan[i+1];
+				arrBilangan[i+1] = tampung;
+			}
+		}
+	}
+
+}
+
+
+int binary;
+int max;
+
+
+	int tengah = 0;
+	int awal = 0;
+	int akhir = max;
+	bool ketemu = false;
+
+
+	while(awal <= akhir && !ketemu){
+		tengah = (awal + akhir)/2;
+		if(arrBilangan[tengah] == cari){
+			ketemu = true;
+			break;
+		}else{
+			if(arrBilangan[tengah] < cari){
+				awal = tengah+1;
+			}else{
+				akhir = tengah-1;
+			}
+		}
+	}
+
+	if(ketemu){
+		cout<<"Data Ditemukan Dinomor Indek Ke-"<<tengah<<endl;
+	}else{
+		cout<<"Data tidak Ditemukan"<<endl;
+	}
+
+
+	for (int i = 0; i < max; ++i)
+	{
+		cout<<arrBilangan[i]<<" ";
+		   cout<<endl;
+	cout<<"Masukkan Nilai Yang Di Cari : ";
+	cin>>cari;
+
+	}
+}
+void tampildata()
+{
+
+int SelectionSort;
+int arrAngka;
+int panjang;
+	int temp = 0;
+	int smallest = 0;
+	mahasiswa mhs[1];
+	int i;
+
+
+
+	//sorting
+	for (int i = 0; i < panjang-1; ++i)
+
+    for (i=0;i<1;i++)
+	{
+        cout<<"NIM\t: "<<mhs[i].nim<<endl;
+
+		cout<<"Nama\t: "<<mhs[i].nama<<endl;
+
+		cout<<"nilai 1\t: "<<mhs[i].nil1<<endl;
+
+		cout<<"nilai 2\t: "<<mhs[i].nil2<<endl;
+
+		cout<<"nilai 3\t: "<<mhs[i].nil3<<endl;
+	}
+		smallest = i;
+		for (int a = i; a < panjang; ++a)
+		{
+			if(arrAngka > arrAngka){
+				smallest = a;
+			}
+		}
+		temp = arrAngka;
+		arrAngka= arrAngka;
+		arrAngka = temp;
+
+	}
+
+
+
+
+
+
+
+int main()
+{
+    menu:
+    int pilih;
+    cout<<"1. Isi data Mahasiswa"<<endl;
+    cout<<"2. Tampilkan data Mahasiswa"<<endl;
+    cout<<"3. pencarian"<<endl;
+    cout<<"0. Keluar"<<endl;
+    cout<<"Pilih : ";
+    cin>>pilih;
+    system("cls");
+    switch (pilih)
+    {
+        case 1: isidata();getch();system("cls");goto menu;break;
+        case 2: tampildata();getch();system("cls");goto menu;break;
+        case 3: pencarian();getch();system("cls");goto menu;break;
+    }
+    getch();
+
+}
+
+
